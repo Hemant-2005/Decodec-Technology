@@ -131,6 +131,7 @@ nav ul li a {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    height: 150px;
 }
 
 .feature {
@@ -153,35 +154,98 @@ nav ul li a {
     padding: 40px;
     background: white;
 }
-.internships {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 40px;
+
+/**our internship **/
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-.internship {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+
+.course-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
 }
-.internship img {
-    width: 100%;
-    border-radius: 10px;
+
+.course-card:hover {
+  transform: scale(1.05);
 }
-.internship h3 {
-    margin: 10px 0;
+
+.course-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
-.duration {
-    font-weight: bold;
-    color: #0033cc;
+
+.content {
+  padding: 15px;
 }
-a {
-    text-decoration: none;
-    color: #0033cc;
-    font-weight: bold;
+
+.provider {
+  font-size: 14px;
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
+
+h3 {
+  font-size: 1.05rem;
+  margin: 5px 0 10px;
+}
+
+.link {
+  font-size: 14px;
+  text-decoration: none;
+  color: #0066cc;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+p {
+  font-size: 14px;
+  color: #777;
+  margin: 5px 0;
+}
+
+.apply-btn {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.apply-btn:hover {
+  background-color: #004a99;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #003366;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.badge.new {
+  background-color: #007b00;
+}
+/**verify**/
 
 .container {
     background: white;
@@ -461,7 +525,7 @@ button:hover {
     flex: 1;
   }
   .about .image img {
-    max-width: 100%;
+    max-width: 40%;
     border-radius: 5px;
   }
   
