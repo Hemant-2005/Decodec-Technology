@@ -1,18 +1,19 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".nav-link");
 
-    const slider = document.getElementById('testimonialSlider');
-    let scrollPosition = 0;
+  navLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default anchor behavior
 
-    function nextSlide() {
-      if (scrollPosition < slider.scrollWidth - slider.clientWidth) {
-        scrollPosition += 320;
-        slider.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+      const targetId = this.getAttribute("href").substring(1); // Get ID without #
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - 60, // Offset for fixed navbar
+          behavior: "smooth"
+        });
       }
-    }
-
-    function prevSlide() {
-      if (scrollPosition > 0) {
-        scrollPosition -= 320;
-        slider.scrollTo({ left: scrollPosition, behavior: 'smooth' });
-      }
-    }
-  
+    });
+  });
+});

@@ -24,16 +24,18 @@ nav {
     max-width: 1200px;
     margin: auto;
     padding: 0 20px;
+    height: 20px;
 }
-
 .logo {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.logo span {
-    color: #4d36cf;
+/* Logo Image */
+.logo img {
+  height: 150px;
+  margin-top: 20px;
 }
 
 nav ul {
@@ -43,12 +45,17 @@ nav ul {
 
 nav ul li {
     margin-left: 20px;
+    font-weight: bold;
 }
 
 nav ul li a {
     text-decoration: none;
     color: rgb(6, 2, 2);
     font-size: 16px;
+}
+
+nav ul li :hover{
+ color: #004a99;
 }
 
 .btn {
@@ -114,6 +121,19 @@ nav ul li a {
     max-width: 500px;
     border-radius: 10px;
 }
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+  .course-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Why Choose Section */
 .why-choose {
@@ -371,6 +391,7 @@ button:hover {
 .slider {
   display: flex;
   transition: transform 0.5s ease;
+  overflow: x;
 }
 
 .card {
