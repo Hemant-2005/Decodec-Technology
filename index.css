@@ -13,7 +13,7 @@ body {
 
 /* Header and Navigation */
 header {
-    background-color: whitesmoke;
+    background-color: #0c0f26;
     padding: 15px 0;
 }
 
@@ -24,7 +24,7 @@ nav {
     max-width: 1200px;
     margin: auto;
     padding: 0 20px;
-    height: 20px;
+    height: 30px;
 }
 .logo {
   display: flex;
@@ -34,24 +34,27 @@ nav {
 
 /* Logo Image */
 .logo img {
-  height: 150px;
-  margin-top: 20px;
+  height: 100px;
+  margin-top: 10px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    color: white;
 }
 
 nav ul li {
     margin-left: 20px;
     font-weight: bold;
+    color: white;
 }
 
 nav ul li a {
     text-decoration: none;
     color: rgb(6, 2, 2);
     font-size: 16px;
+    color: white;
 }
 
 nav ul li :hover{
@@ -59,7 +62,7 @@ nav ul li :hover{
 }
 
 .btn {
-    background: #4d36cf;
+    background: #0070f3;
     padding: 8px 15px;
     border-radius: 5px;
     color: white;
@@ -67,73 +70,118 @@ nav ul li :hover{
 }
 
 /* Hero Section */
+
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  background: #f2f8ff;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+  color: #0070f3;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.hero-buttons a {
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #0070f3;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #0070f3;
+  border: 2px solid #0070f3;
+}
+
+.hero-images {
+  position: relative;
+  width: 40%;
+  margin-bottom: 300px;
+}
+
+.hero-images img {
+  position: absolute;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.img1 {
+  top: 0;
+  left: 20%;
+  width: 400px;
+  z-index: 2;
+}
+
+.img2 {
+  top: 100px;
+  left: 0;
+  width: 350px;
+  z-index: 1;
+}
+
+.img3 {
+  top: 120px;
+  left: 160px;
+  width: 100px;
+  z-index: 3;
+}
+
+.hero-images img:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text,
+  .hero-images {
     max-width: 100%;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: rgb(197, 221, 226);
-}
+  }
 
-.hero-content {
-    max-width: 50%;
-}
-
-.hero h1 {
-    font-size: 56px;
-    color: #222;
-}
-
-.hero h1 span {
-    color: #616bff;
-}
-
-.hero p {
-    font-size: 28px;
+  .hero-images {
     margin-top: 10px;
-}
-
-.buttons {
-    margin-top: 20px;
-}
-
-.apply, .verify {
-    padding: 10px 15px;
-    margin-right: 10px;
-    border-radius: 5px;
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.apply {
-    background-color: #292db8;
-}
-
-.verify {
-    background-color: #222;
-}
-
-.hero-image img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-}
-
-@media (max-width: 576px) {
-  .hero h1 {
-    font-size: 32px;
+    height: 330px;
   }
-  .hero p {
-    font-size: 18px;
-  }
-  .course-container {
-    grid-template-columns: 1fr;
+
+  .hero-images img {
+    position: absolute;
+    
   }
 }
-
 
 /* Why Choose Section */
 .why-choose {
@@ -142,9 +190,9 @@ nav ul li :hover{
     background: white;
 }
 
-.why-choose h2 {
-    font-size: 35px;
-    color: #222;
+.why-choose h1 {
+    font-size: 28px;
+    color: #003366;
 }
 
 .features {
@@ -158,8 +206,8 @@ nav ul li :hover{
     width: 30%;
     padding: 20px;
     margin: 10px;
-    background:  rgb(169, 215, 227);
-    color: white;
+    background:  #f2f8ff;
+    color: #0070f3;
     border-radius: 10px;
     text-align: center;
     grid-template-columns: repeat(3, 1fr);
@@ -169,13 +217,21 @@ nav ul li :hover{
     margin-bottom: 10px;
 }
 
-.intro {
-    text-align: center;
-    padding: 40px;
-    background: white;
-}
 
 /**our internship **/
+
+.intro {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  color: #003366;
+}
+
+.intro h1{
+  font-size: 28px;
+  color: #003366;
+}
+
 .course-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -273,7 +329,7 @@ p {
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 400px;
+    width: 600px;
     margin: 50px auto;
 }
 
@@ -391,7 +447,7 @@ button:hover {
 .slider {
   display: flex;
   transition: transform 0.5s ease;
-  overflow: x;
+  
 }
 
 .card {
@@ -487,38 +543,52 @@ button:hover {
   color: #555;
   line-height: 1.6;
 }
-
 .about-section {
-    width: 80%;
-    margin: auto;
-    padding: 50px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    border-radius: 10px;
+  padding: 60px 20px;
+  background-color: #fff;
 }
+
+.about-section h1{
+  color:#003366;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
+}
+
 .about-text {
-    width: 55%;
+  flex: 1 1 500px;
 }
-.about-text h2 {
-    font-size: 28px;
-    color: #333;
+
+.about-text h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
+
 .about-text p {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
+
 .about-image {
-    width: 40%;
+  flex: 1 1 300px;
 }
+
 .about-image img {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
+
+
+
 @media (max-width: 768px) {
     .about-section {
         flex-direction: column;
@@ -527,28 +597,8 @@ button:hover {
     .about-text, .about-image {
         width: 100%;
     }
-}
+  }
 
-.about {
-    padding: 60px;
-    background: #fff;
-  }
-  .about h2 {
-    margin-bottom: 20px;
-    font-size: 26px;
-  }
-  .about .content {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-  }
-  .about .text {
-    flex: 1;
-  }
-  .about .image img {
-    max-width: 40%;
-    border-radius: 5px;
-  }
   
   .stats {
     display: flex;
@@ -565,15 +615,6 @@ button:hover {
     font-size: 16px;
   }
   
-  .mission {
-    padding: 40px 60px;
-    background: #fff;
-  }
-  .mission h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
   .contact-section {
     max-width: 1000px;
     margin: 40px auto;
