@@ -13,11 +13,11 @@
               <img src="Decodec_logo-removebg-preview.png" alt="">
             </div>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#internships">Internships</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-                <li><a href="#signup" class="btn">Sign In</a></li>
+                <li id="home"><a href="home">Home</a></li>
+                <li id="about"><a href="about">About Us</a></li>
+                <li id="internships"><a href="internships">Internships</a></li>
+                <li id="contact"><a href="contact">Contact Us</a></li>
+                <li><a href="signup" class="btn">Sign In</a></li>
             </ul>
         </nav>
     </header>
@@ -27,8 +27,8 @@
         <h1><span>Certified</span> Internship Experience<br>That Matters</h1>
         <p>Gain recognized certification for your internship that boosts your resume and validates your professional experience.</p>
         <div class="hero-buttons">
-          <a href="#" class="btn-primary">Get Certified Now</a>
-          <a href="#" class="btn-secondary">How It Works</a>
+          <a href="https://forms.gle/T4kZCPsSsiMxMpQc9" class="btn-primary">Get Certified Now</a>
+          <a href="#" class="btn-secondary">Verify Your Certificate</a>
         </div>
       </div>
       <div class="hero-images">
@@ -79,7 +79,7 @@
           <h3>Web Development</h3>
           <a href="#" class="link">📘 Build toward a degree</a>
           <p>Beginner · Professional Certificate</p>
-          <button class="apply-btn"> Apply Now</button>
+          <button class="apply-btn" ><a href="https://forms.gle/T4kZCPsSsiMxMpQc9"></a> Apply Now</button>
         </div>
       </div>
   
@@ -181,11 +181,14 @@
   
 
     <div class="container">
-        <h2>Verify Your Certificate</h2>
-        <p>Enter your certificate ID to verify its authenticity and view your certification details.</p>
-        <input type="text" placeholder="e.g., DEC-2023-12345">
-        <button>Verify Certificate</button>
-    </div>
+      <h2>Verify Your Certificate</h2>
+      <p>Enter your certificate ID to verify its authenticity and view your certification details.</p>
+      <input type="text" id="certificateInput" placeholder="e.g., DEC-2023-12345">
+      <button onclick="verifyCertificate()">Verify Certificate</button>
+      <div id="result"></div>
+  </div>
+  
+  
 
     <div class="apply-container">
         <h2>How to Apply</h2>
@@ -223,98 +226,100 @@
 
     <h2 class="section-title">What Our Interns Say About Decodec</h2>
 
-  <div class="slider-container">
-    <div class="slider" id="testimonialSlider">
-      <!-- Testimonial Cards -->
-      <div class="card">
-        <h3>Decodec</h3>
-        <p>Decodec has helped me grow professionally. The mentorship and projects were fantastic!</p>
-        <div class="profile">
-          <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User">
-          <div class="profile-info">
-            <strong>Ananya Sharma</strong><br>
-            Web Developer Intern
+    <div class="slider-container">
+      <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+        <div class="slider" id="testimonialSlider">
+          <!-- Testimonial Cards -->
+          <div class="card">
+            <h3>Decodec</h3>
+            <p>Decodec has helped me grow professionally. The mentorship and projects were fantastic!</p>
+            <div class="profile">
+              <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User">
+              <div class="profile-info">
+                <strong>Ananya Sharma</strong><br>
+                Web Developer Intern
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Decodec</h3>
-        <p>I loved working at Decodec! The exposure to real-world problems was invaluable.</p>
-        <div class="profile">
-          <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User">
-          <div class="profile-info">
-            <strong>Ravi Verma</strong><br>
-            Data Analyst Intern
+    
+          <div class="card">
+            <h3>Decodec</h3>
+            <p>I loved working at Decodec! The exposure to real-world problems was invaluable.</p>
+            <div class="profile">
+              <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User">
+              <div class="profile-info">
+                <strong>Ravi Verma</strong><br>
+                Data Analyst Intern
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Decodec</h3>
-        <p>Decodec provided me with a platform to explore innovation freely. Highly recommended!</p>
-        <div class="profile">
-          <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User">
-          <div class="profile-info">
-            <strong>Priya Mehta</strong><br>
-            UI/UX Intern
+    
+          <div class="card">
+            <h3>Decodec</h3>
+            <p>Decodec provided me with a platform to explore innovation freely. Highly recommended!</p>
+            <div class="profile">
+              <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User">
+              <div class="profile-info">
+                <strong>Priya Mehta</strong><br>
+                UI/UX Intern
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Add more testimonials as needed -->
-      <div class="card">
-        <h3>Decodec</h3>
-        <p>A great place to start your tech journey. I built my confidence here.</p>
-        <div class="profile">
-          <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="User">
-          <div class="profile-info">
-            <strong>Ajay Singh</strong><br>
-            Full Stack Intern
+    
+          <!-- Add more testimonials as needed -->
+          <div class="card">
+            <h3>Decodec</h3>
+            <p>A great place to start your tech journey. <br>I built my confidence here.</p>
+            <div class="profile">
+              <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="User">
+              <div class="profile-info">
+                <strong>Ajay Singh</strong><br>
+                Full Stack Intern
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Decodec</h3>
-        <p>Decodec has an inspiring work culture. I enjoyed every moment of my internship.</p>
-        <div class="profile">
-          <img src="https://randomuser.me/api/portraits/women/5.jpg" alt="User">
-          <div class="profile-info">
-            <strong>Simran Kaur</strong><br>
-            HR Intern
+    
+          <div class="card">
+            <h3>Decodec</h3>
+            <p>Decodec has an inspiring work culture. <br>I enjoyed every moment of my internship.</p>
+            <div class="profile">
+              <img src="https://randomuser.me/api/portraits/women/5.jpg" alt="User">
+              <div class="profile-info">
+                <strong>Simran Kaur</strong><br>
+                HR Intern
+              </div>
+            </div>
           </div>
+    
+          <!-- Add more if needed -->
         </div>
+      </marquee>
+    </div>
+    
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+    
+      <div class="faq-item">
+        <div class="faq-question">Can I try DecodeC Premium first, to make sure it's right for me?</div>
+        <div class="faq-answer">Yes! We offer a 7-day free trial so you can explore the platform before committing.</div>
       </div>
-
-      <!-- Add more if needed -->
+    
+      <div class="faq-item">
+        <div class="faq-question">What is included in DecodeC Premium?</div>
+        <div class="faq-answer">DecodeC Premium includes unlimited access to expert-led courses, exclusive live sessions, and priority support.</div>
+      </div>
+    
+      <div class="faq-item">
+        <div class="faq-question">Will I save money with DecodeC Premium?</div>
+        <div class="faq-answer">Definitely! With an annual plan, you can save up to 40% compared to monthly subscriptions.</div>
+      </div>
+    
+      <div class="faq-item">
+        <div class="faq-question">Is DecodeC suitable for beginners?</div>
+        <div class="faq-answer">Absolutely! We have beginner-friendly content with step-by-step guidance in coding, business, and tech skills.</div>
+      </div>
     </div>
-  </div>
-
-  <div class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-      <div class="faq-question">Can I try DecodeC Premium first, to make sure it's right for me?</div>
-      <div class="faq-answer">Yes! We offer a 7-day free trial so you can explore the platform before committing.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">What is included in DecodeC Premium?</div>
-      <div class="faq-answer">DecodeC Premium includes unlimited access to expert-led courses, exclusive live sessions, and priority support.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">Will I save money with DecodeC Premium?</div>
-      <div class="faq-answer">Definitely! With an annual plan, you can save up to 40% compared to monthly subscriptions.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">Is DecodeC suitable for beginners?</div>
-      <div class="faq-answer">Absolutely! We have beginner-friendly content with step-by-step guidance in coding, business, and tech skills.</div>
-    </div>
-
-  </div>
+    
 
 
   <section class="about-section">
@@ -449,7 +454,7 @@
         </div>
     
         <div class="footer-bottom">
-          <p>&copy; 2023 DeCodec Technology. All rights reserved.</p>
+          <p>&copy; 2024 DeCodec Technology. All rights reserved.</p>
           <div class="footer-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
@@ -459,18 +464,51 @@
       </footer>
 
       <script src="index.js"></script>
-      
       <script>
-        const questions = document.querySelectorAll('.faq-question');
-    
-        questions.forEach(q => {
-          q.addEventListener('click', () => {
-            q.classList.toggle('active');
-            const answer = q.nextElementSibling;
-            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-          });
-        });
+        // List of valid certificate IDs
+        const validCertificates = {
+          "DEC-2023-12345": {
+            name: "Ananya Sharma",
+            role: "Web Developer Intern",
+            issuedBy: "Decodec",
+            date: "December 2023"
+          },
+          "DEC-2023-67890": {
+            name: "Ravi Verma",
+            role: "Data Analyst Intern",
+            issuedBy: "Decodec",
+            date: "December 2023"
+          },
+          "DEC-2023-54321": {
+            name: "Priya Mehta",
+            role: "UI/UX Intern",
+            issuedBy: "Decodec",
+            date: "December 2023"
+          }
+        };
+      
+        function verifyCertificate() {
+          const input = document.getElementById("certificateInput").value.trim();
+          const resultDiv = document.getElementById("result");
+      
+          if (validCertificates[input]) {
+            const cert = validCertificates[input];
+            resultDiv.style.color = "green";
+            resultDiv.innerHTML = `
+              ✅ Certificate Verified!<br>
+              Name: ${cert.name}<br>
+              Role: ${cert.role}<br>
+              Issued By: ${cert.issuedBy}<br>
+              Date: ${cert.date}
+            `;
+          } else {
+            resultDiv.style.color = "red";
+            resultDiv.innerText = "❌ Certificate not found. Please check the ID and try again.";
+          }
+        }
       </script>
+      
+      
     
 </body>
 </html>

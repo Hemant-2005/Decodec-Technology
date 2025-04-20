@@ -1,19 +1,29 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const navLinks = document.querySelectorAll(".nav-link");
+document.getElementById('about').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.getElementById('about-section').scrollIntoView({ behavior: 'smooth' });
+});
 
-  navLinks.forEach(link => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault(); // Prevent default anchor behavior
+document.getElementById('internships').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.getElementById('internships-section').scrollIntoView({ behavior: 'smooth' });
+});
 
-      const targetId = this.getAttribute("href").substring(1); // Get ID without #
-      const targetSection = document.getElementById(targetId);
+document.getElementById('contact').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });
+});
 
-      if (targetSection) {
-        window.scrollTo({
-          top: targetSection.offsetTop - 60, // Offset for fixed navbar
-          behavior: "smooth"
-        });
-      }
-    });
+//FAQ Toggle
+
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq-question');
+  const answer = item.querySelector('.faq-answer');
+  const arrow = item.querySelector('.arrow');
+
+  question.addEventListener('click', () => {
+    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    arrow.classList.toggle('open');
   });
 });
